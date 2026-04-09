@@ -3,6 +3,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 import { XTerminal } from "@/components/terminal";
 import { ContainerManager } from "@/components/container-manager";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SovereignDashboard } from "@/components/sovereign-dashboard";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           <TabsList>
             <TabsTrigger value="terminal">Terminal</TabsTrigger>
             <TabsTrigger value="containers">Container Manager</TabsTrigger>
+            <TabsTrigger value="sovereign">Sovereign Dashboard</TabsTrigger>
           </TabsList>
           
           <TabsContent value="terminal" className="h-[calc(100%-40px)]">
@@ -20,6 +22,10 @@ export default function Home() {
           
           <TabsContent value="containers">
             <ContainerManager />
+          </TabsContent>
+
+          <TabsContent value="sovereign">
+            <SovereignDashboard />
           </TabsContent>
         </Tabs>
       </main>
