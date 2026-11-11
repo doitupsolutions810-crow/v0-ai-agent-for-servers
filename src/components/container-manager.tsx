@@ -15,7 +15,7 @@ export const ContainerManager = () => {
     const newContainer = {
       id: Math.random().toString(36).substring(2, 9),
       name: `container-${Date.now()}`,
-      status: 'running',
+      status: 'running' as const,
       createdAt: new Date().toISOString()
     };
     setContainers([...containers, newContainer]);

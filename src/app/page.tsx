@@ -1,9 +1,12 @@
 "use client";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import { XTerminal } from "@/components/terminal";
+import dynamic from "next/dynamic";
 import { ContainerManager } from "@/components/container-manager";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SovereignDashboard } from "@/components/sovereign-dashboard";
+
+// xterm touches `self` at import time, so the terminal must never be prerendered on the server.
+const XTerminal = dynamic(() => import("@/components/terminal").then((m) => m.XTerminal), { ssr: false });
 
 export default function Home() {
   return (

@@ -7,8 +7,8 @@ import 'xterm/css/xterm.css';
 
 export const XTerminal = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
-  const terminal = useRef<Terminal>();
-  const fitAddon = useRef<FitAddon>();
+  const terminal = useRef<Terminal | null>(null);
+  const fitAddon = useRef<FitAddon | null>(null);
 
   useEffect(() => {
     if (!terminalRef.current) return;
